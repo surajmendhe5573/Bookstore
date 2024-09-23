@@ -5,6 +5,8 @@ class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    profile_image = models.ImageField(upload_to='images/', null=True, blank=True)
+
 
     groups = models.ManyToManyField(
         'auth.Group',

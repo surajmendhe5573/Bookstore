@@ -5,10 +5,12 @@ User = get_user_model()
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
+    profile_image = serializers.ImageField(required=False, allow_null=True)
+
 
     class Meta:
         model = User
-        fields = ['email', 'username', 'password', 'age', 'description']
+        fields = ['email', 'username', 'password', 'age', 'description', 'profile_image']
 
     def create(self, validated_data):
         user = User.objects.create_user(
@@ -16,7 +18,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             username=validated_data['username'],
             password=validated_data['password'],
             age=validated_data.get('age', None),
-            description=validated_data.get('description', "")
+            description=validated_data.get('description', ""),
+            profile_image=validated_data.get('profile_image', None)
         )
         return user
 
