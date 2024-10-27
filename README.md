@@ -1,4 +1,5 @@
-# Online Bookstore API
+# Online Bookstore APIs
+
 ## Functionality
 
 - User Register
