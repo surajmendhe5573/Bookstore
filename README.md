@@ -15,5 +15,3 @@
 - Add to Cart   (Authenticated User)
 - Remove from Cart (Authenticate User)
 - View Cart (Authenticate User)
-
-
